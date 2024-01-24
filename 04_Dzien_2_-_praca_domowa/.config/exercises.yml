@@ -1,0 +1,2 @@
+exercises:
+    1_Flask: { max_points: 0, disabled: true, translations: { en: 1_Flask, pl: 1_Flask } }

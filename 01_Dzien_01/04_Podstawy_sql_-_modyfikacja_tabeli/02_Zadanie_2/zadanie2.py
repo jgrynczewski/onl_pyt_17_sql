@@ -1,0 +1,1 @@
+add_seats_to_cinema = "Zapytanie wpisz tutaj!"

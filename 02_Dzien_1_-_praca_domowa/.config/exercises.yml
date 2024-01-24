@@ -1,0 +1,2 @@
+exercises:
+    1_Library: { max_points: 0, disabled: true, translations: { en: 1_Library, pl: 1_Library } }
