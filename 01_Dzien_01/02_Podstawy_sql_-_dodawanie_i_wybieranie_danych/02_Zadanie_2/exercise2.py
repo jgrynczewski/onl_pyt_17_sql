@@ -1,3 +1,11 @@
-get_products_sql = "Write the query here!"
-get_orders_sql = "Write the query here!"
-get_clients_sql = "Write the query here!"
+get_products_sql = """
+SELECT * FROM products;
+"""
+
+get_orders_sql = """
+SELECT * FROM orders;
+"""
+
+get_clients_sql = """
+SELECT * FROM clients;
+"""
