@@ -1,5 +1,16 @@
-remove_movie = "Write the query here!"
-remove_tickets = "Write the query here!"
-remove_ticket = "Write the query here!"
-remove_cinema = "Write the query here!"
+remove_movie = """
+DELETE FROM movies WHERE id=1;
+"""
+
+remove_tickets = """
+DELETE FROM tickets WHERE price>20;
+"""
+
+remove_ticket = """
+DELETE FROM tickets WHERE id=3;
+"""
+
+remove_cinema = """
+DELETE FROM cinemas WHERE id=2;
+"""
 
