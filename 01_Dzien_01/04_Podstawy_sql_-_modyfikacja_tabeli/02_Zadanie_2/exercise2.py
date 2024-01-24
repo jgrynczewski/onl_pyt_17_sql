@@ -1,1 +1,3 @@
-add_seats_to_cinema = "Write the query here!"
+add_seats_to_cinema = """
+ALTER TABLE cinemas ADD seats INT;
+"""
