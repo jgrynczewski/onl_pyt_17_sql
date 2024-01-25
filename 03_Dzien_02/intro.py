@@ -28,3 +28,20 @@ CREATE TABLE city(
 """
 
 # wiele do wielu
+"""
+CREATE TABLE movie(
+    id SERIAL PRIMARY KEY, 
+    name VARCHAR(256)
+);
+CREATE TABLE actor(
+    id SERIAL PRIMARY KEY, 
+    name VARCHAR(256)
+);
+CREATE TABLE actor_movie(
+    id SERIAL PRIMARY KEY, 
+    movie_id INT, 
+    actor_id INT, 
+    FOREIGN KEY(movie_id) REFERENCES movie(id), 
+    FOREIGN KEY(actor_id) REFERENCES actor(id)
+);
+"""
