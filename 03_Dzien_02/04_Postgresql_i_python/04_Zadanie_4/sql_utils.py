@@ -16,7 +16,6 @@ def execute_sql(sql_code, db):
     :rtype: list
     :return: data from psycobg2 cursor as a list (can be None) if nothing to fetch.
     """
-    # Place exercise 2 solution here.
     cnx = connect(
         user=USER,
         password=PASSWORD,
@@ -24,37 +23,29 @@ def execute_sql(sql_code, db):
         database=db
     )
 
-    # tworzymy kursor
     with cnx.cursor() as cursor:
-        # zapytanie
         cursor.execute(sql_code)
-        # commit
         cnx.commit()
 
         try:
-            # fetchujemy (dla SELECT)
             res = cursor.fetchall()
         except ProgrammingError:
-            # jeżeli nic nie było do sfechowania (bo zapytanie INSERT, UPDATE lub DELETE)
             res = None
 
-    # Zamykamy połączenie z bazą
     cnx.close()
-
     return res
 
 
 app = Flask(__name__)
 
 
-@app.route('/products/')
+@app.route('/movies/')
 def hello():
-    products = execute_sql("SELECT * FROM products", "exercises_db")
-
-    # budujemy odpowiedź
-    response = "<h3>Lista produktów</h3><ul>"
-    for product in products:
-        response += f"<li>{product[1]} [{product[2]}]</li>"
+    movies = execute_sql("SELECT * FROM movies", "cinemas_db")
+    print(movies)
+    response = "<h3>Lista filmów</h3><ul>"
+    for movie in movies:
+        response += f"<li>{movie[1]}</li>"
     response += "</ul>"
 
     return response
@@ -62,4 +53,3 @@ def hello():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
