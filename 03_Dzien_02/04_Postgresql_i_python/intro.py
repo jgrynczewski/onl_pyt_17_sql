@@ -1,7 +1,8 @@
 from psycopg2 import connect, ProgrammingError
 
 # query = "DELETE FROM opinions where id=2;"
-query = "SELECT * FROM opinions;"
+# query = "SELECT * FROM opinions;"
+query = "SELECT * FROM products;"
 
 # połączenie z bazą
 cnx = connect(
@@ -27,4 +28,8 @@ with cnx.cursor() as cursor:
 # Zamykamy połączenie z bazą
 cnx.close()
 
-print(res)
+
+# Konsumowanie
+if res:
+    for item in res:
+        print(item[1])
